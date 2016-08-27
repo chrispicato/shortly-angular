@@ -11,4 +11,8 @@ angular.module('shortly.links', [])
   Links.getAll().then(function(results) {
     $scope.data.links = results;
   });
+
+  $scope.logout = function () {
+    delete localStorage['com.shortly'];
+  };
 });

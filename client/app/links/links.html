@@ -4,12 +4,13 @@
     <ul>
       <li><a href="#links">Links</a></li>
       <li><a href="#shorten">Shorten</a></li>
+      <li ng-click="logout()"><a href="#signin">Sign Out</a></li>
     </ul>
   </nav>
-  <ul ng-controller="LinksController">
     <form>
       <input ng-model="search">
     </form>
+  <ul>
     <li ng-repeat="link in data.links | filter: search |orderBy: '-visits'" class="link">
       <!-- <div class="link">
         <img src="./assets/redirect_icon.png">
@@ -27,6 +28,4 @@
       </div>
     </li>
   </ul>
-  <hr>
-  <pre>{{ data.links }}</pre>
 </div>

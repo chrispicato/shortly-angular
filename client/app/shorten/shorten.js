@@ -6,10 +6,13 @@ angular.module('shortly.shorten', [])
 
   $scope.addLink = function () {
     if ($scope.myForm.input.$valid) {
-      console.log('valid!!');
       Links.addOne($scope.link);
     } else {
 
     }
+  };
+
+  $scope.logout = function () {
+    delete localStorage['com.shortly'];
   };
 });
