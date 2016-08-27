@@ -2,9 +2,9 @@ angular.module('shortly.links', [])
 
 .controller('LinksController', function ($scope, $location, Links, Auth) {
   // Your code here
-  if (!Auth.isAuth()) {
-    $location.url('/signin');
-  }
+  // if (!Auth.isAuth()) {
+  //   $location.url('/signin');
+  // }
   $scope.data = {
     links: []
   };

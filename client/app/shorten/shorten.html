@@ -1,5 +1,11 @@
 <div id='container'>
 <!-- Your code here -->
+  <nav class="navigation">
+    <ul>
+      <li><a href="#links">Links</a></li>
+      <li><a href="#shorten">Shorten</a></li>
+    </ul>
+  </nav>
   <form name="myForm" ng-controller="ShortenController">
     <input type="url" name="input" ng-model="link.url" placeholder="Please enter url here..." required>
     <button ng-click="addLink()">Create</button>
