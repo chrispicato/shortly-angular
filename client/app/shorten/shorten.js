@@ -2,12 +2,14 @@ angular.module('shortly.shorten', [])
 
 .controller('ShortenController', function ($scope, $location, Links, Auth) {
   // Your code her
-  // if (!Auth.isAuth()) {
-  //   $location.url('/signin');
-  // }
-  $scope.link = {};
+  $scope.link = {url: ''};
 
   $scope.addLink = function () {
-    Links.addOne($scope.link);
+    if ($scope.myForm.input.$valid) {
+      console.log('valid!!');
+      Links.addOne($scope.link);
+    } else {
+
+    }
   };
 });

@@ -1,11 +1,12 @@
 <div id='container'>
 <!-- Your code here -->
-  <div ng-controller="ShortenController">
-    <input type="text" ng-model="link.url" placeholder="Please enter url here...">
+  <form name="myForm" ng-controller="ShortenController">
+    <input type="url" name="input" ng-model="link.url" placeholder="Please enter url here..." required>
     <button ng-click="addLink()">Create</button>
-    <hr>
-    <pre>{{ link }}</pre>
-  </div>
+    <div ng-show="myForm.input.$invalid">Link is invalid.</div>
+  </form>
+
 </div>
+
 
 
