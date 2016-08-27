@@ -7,12 +7,23 @@
     </ul>
   </nav>
   <ul ng-controller="LinksController">
-    <li ng-repeat="link in data.links">
-      <div class="link">
+    <form>
+      <input ng-model="search">
+    </form>
+    <li ng-repeat="link in data.links | filter: search |orderBy: '-visits'" class="link">
+      <!-- <div class="link">
         <img src="./assets/redirect_icon.png">
         <div class="title">{{ link.title }}</div>
         <div class="original">{{ link.url }}</div>
         <div class="original">{{ link.baseUrl + '/' + link.code }}</div>
+        <div class="visits">{{ link.visits }}</div>
+      </div> -->
+      <img src='./assets/redirect_icon.png'/>
+      <div class='info'>
+        <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+        <div class='title'>{{link.title}}</div>
+        <div class='original'>{{link.url}}</div>
+        <a href='{{link.baseUrl}}/{{link.code}}'>{{link.baseUrl}}/{{link.code}}</a>
       </div>
     </li>
   </ul>
